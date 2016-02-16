@@ -1,5 +1,3 @@
 # Architecture-application
-Doc HTML, CSS, JS de Dr Looper
+Documents du projet Dr Looper by Les Highfives
 
-donne nous le lien pour le menu flottant
-please
