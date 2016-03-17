@@ -1,17 +1,4 @@
-$( document ).ready(function() {
-    // DOM ready
 
-    // Test data
-    /*
-     * To test the script you should discomment the function
-     * testLocalStorageData and refresh the page. The function
-     * will load some test data and the loadProfile
-     * will do the changes in the UI
-     */
-    // testLocalStorageData();
-    // Load profile if it exits
-    loadProfile();
-});
 
 /**
  * Function that gets the data of the profile in case
@@ -79,3 +66,18 @@ function testLocalStorageData() {
     localStorage.setItem("PROFILE_NAME", "César Izquierdo Tello");
     localStorage.setItem("PROFILE_REAUTH_EMAIL", "oneaccount@gmail.com");
 }
+
+$( document ).ready(function() {
+    // DOM ready
+
+    // Test data
+    /*
+     * To test the script you should discomment the function
+     * testLocalStorageData and refresh the page. The function
+     * will load some test data and the loadProfile
+     * will do the changes in the UI
+     */
+    // testLocalStorageData();
+    // Load profile if it exits
+    loadProfile();
+});
