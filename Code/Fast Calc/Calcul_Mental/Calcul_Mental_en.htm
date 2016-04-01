@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+ <html>
+ <HEAD>
+<TITLE>Mental maths game - Albatros Concept</TITLE>
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Author" CONTENT="Bruno AUBIN">
+
+<script language="JavaScript" src="include/Calcul_Mental.js"></script>
+<script language="JavaScript" src="include/general.js"></script>
+<link href="Calcul_Mental.css" rel="stylesheet" media="screen">
+</HEAD>
+
+<!-- Debut du conteneur HTML -->
+<BODY TEXT="Black" LINK="#33cccc" ALINK="Red" VLINK="#33cccc" BGCOLOR="WHITE">
+<DIV id="tip" class="bulle"></DIV>
+<noscript>This software needs javascript</noscript>
+<!-- partie centrale -->
+<H3 ALIGN="center">Mental calcul</H3>
+<font size="5"><DIV ALIGN="CENTER" id="texte_time"></DIV></font>
+<DIV ALIGN="CENTER" id="choix_calcul"></DIV>
+<P>
+<DIV ALIGN="CENTER" id="resultat"></DIV>
+
+<P>
+<script language="javascript">
+<!--
+var timer=120;
+var score = 0;
+var variation_score = 1;
+
+function fin_rebours_application()
+	{
+	var note_20;
+	if (score>score_max[document.choix_calcul.mon_choix.value])
+		{
+		note_20 = 20
+		}
+	else
+		{
+		note_20 = Math.round(40*score/score_max[document.choix_calcul.mon_choix.value])/2;
+		}
+	SetDiv("note_sur_20",note_20+"/20");
+	score=0;
+	variation_score=1;
+	SetDiv("resultat",html_debut_jeu);
+	}
+
+function valid_user()
+	{
+/*
+"calcul" est la chaine de caractere du calcul à effectuer
+"user" est le nombre retourné par l'utilisateur
+*/
+	if (!test_saisie_text(document.form_user.user.value,motif_isN))
+		{
+		alert("Bad format text (integer not signed only)");
+		document.form_user.user.value="";
+		user.focus();
+		return(0)
+		}
+	else if (compare_resultats (document.form_user.user,calcul))
+		{
+		score = score + variation_score;
+		SetDiv("msg_jeu","<B class='bon_resultat'>Bravo, score + " + variation_score + " pts</B>");
+		variation_score ++;
+		}
+	else
+		{
+		if (score > 0)
+			score --;
+		SetDiv("msg_jeu","<B class='mauvais_resultat'>Bad, score - 1 pt</B>");
+		variation_score = 1;
+		}
+	SetDiv("score_total","Score : "+score);
+	affiche_tirage();
+	}
+
+var machine = '<form method="post" NAME="form_user" OnSubmit="valid_user();return(false);">';
+machine = machine + '<INPUT TYPE="TEXT" class="ecran" id="user" MAXLENGTH="5" VALUE="" OnMouseOver="bulle(\'Tape your result (integer) here\',event);" onMouseOut="couic();"><BR>';
+
+//machine = machine + '<INPUT class="touche_calculatrice_large" TYPE="BUTTON" VALUE="Valider" OnClick="couic();valid_user();return (false);" OnMouseOver="bulle(\'Clic to submit your result\',event);" onMouseOut="couic();"><BR>';
+machine = machine + '</FORM>';
+
+var choix_operation;
+choix_operation =  "<form name='choix_calcul' method='post'><select name='mon_choix' OnChange = 'liste_choix=type_tirage[this.value]; SetDiv(\"resultat\",html_debut_jeu);init_timer();'>";
+choix_operation = choix_operation + "<option value='7'>Addition table (Primary school)";
+choix_operation = choix_operation + "<option value='8'>Substraction table (Primary school)";
+choix_operation = choix_operation + "<option value='1' SELECTED>Addition and substraction with 2 digits";
+choix_operation = choix_operation + "<option value='2'>Multiplication and division with 1 digit";
+choix_operation = choix_operation + "<option value='3'>Multiplication by 11, 12 or 15";
+choix_operation = choix_operation + "<option value='4'>(n5) X (n5) or (n5-1) X (n5 + 1)";
+choix_operation = choix_operation + "<option value='5'>Multiplication and division by 25";
+choix_operation = choix_operation + "<option value='6'>All calculations";
+choix_operation = choix_operation + "</select></form><BR><DIV id='score_total'></DIV><BR><DIV id='note_sur_20'></DIV><DIV id='calcul' class='ecran'></DIV><DIV id='msg_jeu'></DIV>";
+
+var html_debut_jeu="<BR><DIV ALIGN='CENTER' id='bouton_tirage' OnClick='couic();debut_partie();' OnMouseOver='bulle(\"Clic to begin one game\",event);' onMouseOut='couic();'>New game</DIV>";
+SetDiv("choix_calcul",choix_operation);
+SetDiv("resultat",html_debut_jeu);
+-->
+</script>
+
+
+<h4>How playing ?</h4>
+<UL>
+<LI>At the beginning of the game, you are selected at the addition and substraction with 2 digit item</LI>
+<LI>You can change the ite</LI>
+<LI>Clic on the "New game" button</LI>
+<LI>In the first gray frame, an operation appears</LI>
+<LI>Enter your result in the 2<sup>nd</sup> gray frame and validate it with the "Return" key.
+<LI>If your result is good, score will adds with the number of following good answer you succeded (For nstance, if you just successed with the 3w<rd</sup> followin good answer, your score will add 3 pts)</LI>
+<li>If your result is bad, the score will be inferred from 1 pt, except if you have 0 pt. More, the next adds will only be of 1 pt.</LI>
+<LI>You have 2 mn to perform.</LI>
+<LI>At the end of the time, the screen will change and will offer you to play another game. Final score will stay and the and a note on 20 (French type) is displayed.</LI>
+</UL>
+Everybody can play this game. There is many levels. Primary school (addition and soustration tables), highschools pupils, or adults.
+<BR>
+At end of each game, a note on 20 (french type quotation) is displayed, giving you your level.A chaque fin de partie, une note sur 20 est donnée vous donnant votre niveau. The 20 quotation can be obtained if you're training often.
+<P>
+<h4>Historical</h4>
+<UL>
+<LI><b>2014-11-24 : </B>This softwaare is now a calcul mental game with timer (2 mn). Scoring condideres the regularity of correct answers. Adding of addition and substraction tables in items.</LI>
+<LI><b>29/12/2013 :</B> New version much more easy to use (Entering of result in one field, dynamical change of fields...)</LI> 
+</UL>
+
+<B>Tips</B> : for more help about how to calculate, <a href="http://albatros.concept.free.fr//Formation/maths_cours.php?Theme=A4" target="_BLANCK">see here (french text)</a>.
+<P>
+<B>Greetings</B>
+<UL>
+<LI><a href="http://www.bertrandperrier.fr/" TARGET="_BLANK">Bertrand Perrier</a> (Beta testeur)</LI>
+</UL>
+
+</BODY>
+</HTML>
+

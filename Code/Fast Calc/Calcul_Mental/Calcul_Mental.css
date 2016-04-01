@@ -1,0 +1,143 @@
+/*
+    serif = Bodoni, Roman, Times, Georgia, "Times New Roman", Garamond,... (= avec petit empattement aux extrémités)
+    sans-serif = Arial, Helvetica, Verdana, Univers, "MS Trebuchet",... (= extrémités simples et droites)
+    ( les polices Sans-serif plus faciles à lire à l'écran que les polices Serif, mais à l'inverse les polices Serif plus adaptées à l'impression)
+    cursive = Chancery, Script, Brush,... (en italique) possèdent différentes dénominations : cursive, italique, oblique, slanted mais en CSS on parle de cursive.
+    monospace = (largeur fixe de caractères)
+    Courier, "MS Courier New", Prestige, Lucida, "Everson Mono";...
+    fantasy = Algerian, Critter, Rosewwod,... (plutôt de style décoratif) outre les caractères représentent parfois des petites images et symboles.
+
+*/
+
+/* Balises HTML */
+BODY
+	{
+	margin:4px;
+	font-family: Arial, Helvetica, sans-serif;
+	color : #666666;
+	font-size:12px;
+	background-color: white;
+	}
+#calculatrice
+	{
+	background-color: pink;
+	border : solid 2px #5390b7;
+	border-radius: 30px 30px 30px 30px;
+	}
+.bulle
+	{
+	position:absolute;
+	visibility:hidden;
+	z-index:800;
+	background:#ffa;
+	width:150px; height:auto;
+	border-radius: 8px 8px 8px 8px;
+	padding:4px;
+	text-align:left;
+	border:1px solid blue;
+	}
+.bon_resultat
+	{
+	height : 20px;
+	font-size : 12px;
+/*	padding : 6px;
+*/	border-left : solid 2px #999999;
+	border-top : solid 2px #999999;
+	border-right : solid 2px #000000;
+	border-bottom : solid 2px #000000;
+	border-radius: 5px 5px 5px 5px;
+	text-align : center;
+	background-color: #33FF33;
+	}
+.mauvais_resultat
+	{
+	height : 20px;
+	font-size : 12px;
+/*	padding : 6px;
+*/	color : black;
+	border-left : solid 2px #999999;
+	border-top : solid 2px #999999;
+	border-right : solid 2px #000000;
+	border-bottom : solid 2px #000000;
+	border-radius: 5px 5px 5px 5px;
+	text-align : center;
+	background-color: #FF6666;
+	}
+#bouton_tirage
+	{
+	cursor : pointer;
+	width : 200px;
+	height : 20px;
+	font-size : 18px;
+	border-left : solid 1px #999999;
+	border-top : solid 1px #999999;
+	border-right : solid 1px #000000;
+	border-bottom : solid 1px #000000;
+	border-radius: 5px 5px 5px 5px;
+	text-align : center;
+	background-color: #F6E497;
+	}
+#bouton_tirage:hover
+	{
+	border-left : solid 2px #999999;
+	border-top : solid 2px #999999;
+	border-right : solid 2px #000000;
+	border-bottom : solid 2px #000000;
+	}
+.touche_calculatrice
+	{
+	cursor : pointer;
+	width : 60px;
+	height : 60px;
+	font-size : 18px;
+	background-color: #00FFFF;
+	border-left : solid 1px #999999;
+	border-top : solid 1px #999999;
+	border-right : solid 1px #000000;
+	border-bottom : solid 1px #000000;
+	border-radius: 10px 10px 10px 10px;
+	text-align : center;
+	font-size : 24px;
+	}
+.touche_calculatrice_large
+	{
+	cursor : pointer;
+	width : 180px;
+	height : 60px;
+	font-size : 18px;
+	background-color: #ff6666;
+	border-left : solid 1px #999999;
+	border-top : solid 1px #999999;
+	border-right : solid 1px #000000;
+	border-bottom : solid 1px #000000;
+	border-radius: 10px 10px 10px 10px;
+	text-align : center;
+	font-size : 24px;
+	}
+.ecran
+	{
+	width : 100px;
+	height : 24px;
+	font-size : 16px;
+	background-color: #CCCCCC;
+	border-left : solid 1px #999999;
+	border-top : solid 1px #999999;
+	border-right : solid 1px #000000;
+	border-bottom : solid 1px #000000;
+	}
+
+
+a.Item_Menu {color : #f1f1f1 ; padding : 6px 5px 5px 5px ; text-transform : uppercase ; text-decoration : none ; font-size : 11px ; font-weight : bold ;}
+a.Item_Menu:hover { background-color : #538cb9; }
+.Item_Menu_Choisi {color : #f1f1f1 ; padding :  6px 5px 5px 5px; text-transform : uppercase ; text-decoration : underline ; font-size : 11px ; font-weight : bold ;background-color : #88a1b9;}
+
+a.Menu_Info:link { color:yellow; text-decoration:none;font-size:10px; }
+a.Menu_Info:visited { color:#cccccc; text-decoration:none;font-size:10px; }
+a.Menu_Info:hover { color:white; text-decoration:none;font-size:10px;font-weight:normal; }
+/*a.Item_Menu:active { color:#0000EE; background-color:#FFFF99; font-weight:bold; }*/
+
+a.Acteur:link { color:#0000ff; text-decoration:none;font-size:12px; }
+a.Acteur:visited { color:#0000ff; text-decoration:none;font-size:12px; }
+a.Acteur:hover { color:#009999; text-decoration:none; font-weight:bold;font-size:14px; }
+/*a.Item_Menu:active { color:#0000EE; background-color:#FFFF99; font-weight:bold; }*/
+
