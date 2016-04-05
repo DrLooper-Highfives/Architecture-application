@@ -77,18 +77,17 @@
 
 
 	<!-- Jeu Fast Calc -->
-
     <section id="fastcalc" class="bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    
-                    <!-- partie centrale -->
-                    <H3 ALIGN="center">Calcul Mental</H3>
-                    <font size="5"><DIV ALIGN="CENTER" id="texte_time"></DIV></font>
-                    <DIV ALIGN="CENTER" id="choix_calcul"></DIV>
+                    <h2 class="section-heading">Fast Calc'</h2>
+                    <h3 class="section-subheading text-muted">Sélectionnez un type de calcul</h3>
+                    <font size="5"><div id="texte_time"></div></font>
+                    <br></br>
+                    <div id="choix_calcul"></div>
                     <P>
-                    <DIV ALIGN="CENTER" id="resultat"></DIV>
+                    <div id="resultat"></div>
                     <script language="javascript">
                         var timer=120;
                         var score = 0;
@@ -127,17 +126,17 @@
                             else if (compare_resultats (document.form_user.user,calcul))
                                 {
                                 score = score + variation_score;
-                                SetDiv("msg_jeu","<B class='bon_resultat'>Bravo, score + " + variation_score + " pts</B>");
+                                SetDiv("msg_jeu","<B style='color:green'class='bon_resultat'>Bravo!  score + " + variation_score + " pts</B>");
                                 variation_score ++;
                                 }
                             else
                                 {
                                 if (score > 0)
                                     score --;
-                                SetDiv("msg_jeu","<B class='mauvais_resultat'>Mauvais, score - 1 pt</B>");
+                                SetDiv("msg_jeu","<B style='color:red' class='mauvais_resultat'>Mauvais  score - 1 pt</B>");
                                 variation_score = 1;
                                 }
-                            SetDiv("score_total","Score : "+score);
+                            SetDiv("score_total","Score = "+score);
                             affiche_tirage();
                             }
 
@@ -159,7 +158,7 @@
                         choix_operation = choix_operation + "<option value='6'>Tous les calculs";
                         choix_operation = choix_operation + "</select></form><BR><DIV id='score_total'></DIV><BR><DIV id='note_sur_20'></DIV><DIV id='calcul' class='ecran'></DIV><DIV id='msg_jeu'></DIV>";
 
-                        var html_debut_jeu="<BR><DIV ALIGN='CENTER' id='bouton_tirage' OnClick='couic();debut_partie();' OnMouseOver='bulle(\"Cliquez pour démarrer une partie\",event);' onMouseOut='couic();'>Nouvelle partie</DIV>";
+                        var html_debut_jeu="<BR><DIV type='button' class='btn btn-primary' id='bouton_tirage' OnClick='couic();debut_partie();' OnMouseOver='bulle(\"Cliquez pour démarrer une partie\",event);' onMouseOut='couic();'>Nouvelle partie</DIV>";
                         SetDiv("choix_calcul",choix_operation);
                         SetDiv("resultat",html_debut_jeu);
                     </script>
