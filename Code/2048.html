@@ -1,15 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> 
 
-<head>
 
-    <meta charset="utf-8">
+ 
+<html lang="fr"> 
+  <head>
+     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Dr Looper - Sac</title>
+    <title>Dr Looper - 2048</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -23,13 +24,54 @@
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <link rel="stylesheet" type="text/css" href="css/site.css"/> 
+    <link href="css/main.css" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" href="img/logoHF.png">
-</head>
 
-<body id="page-top" class="index">
+    <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
+    <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone 5+ -->
+    <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x920.png"  media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone, retina -->
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+
+<!-- 
+
+<script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+
+<script>document.write('<script src="js/main.js?dev=' + Math.floor(Math.random() * 100) + '"\><\/script>');</script>
+
+*/
+
+ -->
+
+<script>document.write('<script src="js/main.js?dev=' + Math.floor(Math.random() * 100) + '"\><\/script>');</script>
+
+<script src="js/bind_polyfill.js"></script>
+<script src="js/classlist_polyfill.js"></script>
+<script src="js/animframe_polyfill.js"></script>
+<script src="js/keyboard_input_manager.js"></script>
+<script src="js/html_actuator.js"></script>
+<script src="js/grid.js"></script>
+<script src="js/tile.js"></script>
+<script src="js/local_storage_manager.js"></script>
+<script src="js/game_manager.js"></script>
+  
+
+  </head> 
+ 
+  <body> 
+   
+
+    <nav> 
+      <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
@@ -69,19 +111,72 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-                
-    <section id="jumboswork" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <iframe width="100%" height="500" src="http://games.happyneuron.fr/aspx/launch.aspx?as=as01&t=3D86B8F045FC4DB98BDE328263779426493F2EDD&gameEngine=2&gamenum=126&coach=no&btnQuit=1&DashBoard=0&avatar=0&DebugLevel=0" frameborder="0" scrolling="no"></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <footer>
-        <div class="container">
+<div class="container">
+    <div class="heading">
+      <h1 class="title">2048</h1>
+      <div class="scores-container">
+        <div class="score-container">0</div>
+		<span style="color:FCF302">
+        <div class="best-container">0</div>
+      </div>
+    </div>
+
+    <div class="above-game">
+      <p class="game-intro">Assemblez les nombres et <br/>obtenez <strong>la case 2048 !</strong></p>
+      <a class="restart-button">Nouvelle Partie</a>
+    </div>
+
+    <div class="game-container">
+      <div class="game-message">
+        <p></p>
+        <div class="lower">
+          <a class="keep-playing-button">Keep going</a>
+          <a class="retry-button">Essayez une nouvelle fois</a>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+      </div>
+
+      <div class="tile-container">
+
+      </div>
+    </div>
+
+    <p class="game-explanation">
+      <strong class="important">Comment jouer :</strong> Utilisez les <strong>flèches directionnelles</strong> pour déplacer les cases. Lorsque 2 cases avec le même nombre sont côte à côte, alors <strong>elles s'assemblent en une seule !</strong><br/>
+      La touche R permet de relancer une nouvelle partie.
+    </p>
+  </div>
+
+
+	<footer> 
+		    <div class="container">
             <div class="row">
                 <div class="col-md-4">
                     <span class="copyright">Copyright &copy; HighFives 2016</span>
@@ -101,9 +196,8 @@
                 </div>
             </div>
         </div>
-    </footer>
-
-    <!-- jQuery -->
+	</footer> 
+<!-- jQuery -->
     <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
@@ -120,7 +214,5 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/agency.js"></script>
-
-</body>
-
+  </body> 
 </html>
