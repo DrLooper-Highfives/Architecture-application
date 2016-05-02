@@ -48,11 +48,11 @@
                     
                     if((focusInput.attr('name') == 'name' || focusInput.attr('name') == 'username' ) && focusInput.val().length < 2)
                     {
-                        errorMessage(erroEle ,  "isn't your "+ focusInput.attr('name') + " bit small. ", 'visible' , 1);
+                        errorMessage(erroEle ,  "votre "+ focusInput.attr('name') + " est un peu court. ", 'visible' , 1);
                     }
                     else if(focusInput.attr('name') == 'email' && !validateEmail(focusInput.val()))
                     {
-                        errorMessage( erroEle ,  "It doesn't look like a "+focusInput.attr('name') , 'visible' , 1);
+                        errorMessage( erroEle ,  "Cela ne ressemble pas à un "+focusInput.attr('name') , 'visible' , 1);
                     }
                     else if(focusInput.attr('name') == 'phone' && !validatePhone(focusInput.val()))
                     {
@@ -68,11 +68,11 @@
                 }else{
                     if(!$("input[name='profession']:checked").val())
                     {
-                        errorMessage(erroEle ,  'please enter your '+ focusInput.attr('name'), 'visible' , 1);
+                        errorMessage(erroEle ,  'entrez votre '+ focusInput.attr('name'), 'visible' , 1);
                     }
                     else
                     {
-                        errorMessage(erroEle ,  'please select your profession', 'visible' , 1);
+                        errorMessage(erroEle ,  'sélectionnez votre profession', 'visible' , 1);
                     }
                 }
               
